@@ -1,6 +1,11 @@
 [build]
 builder = "nixpacks"
-buildCommand = "cd backend/RealTimeChat && dotnet publish -c Release -o out"
+
+[build.nixpacks]
+detect = false
+
+[build.nixpacks.phases]
+build = "cd backend/RealTimeChat && dotnet publish -c Release -o out"
 
 [build.nixpacks.environmentVariables]
 DOTNET_PROJECT_PATH = "backend/RealTimeChat/RealTimeChat.csproj"
