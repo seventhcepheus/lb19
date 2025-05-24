@@ -1,0 +1,11 @@
+[build]
+builder = "nixpacks"
+
+[build.nixpacks]
+detect = true
+
+[build.nixpacks.environmentVariables]
+DOTNET_PROJECT_PATH = "backend/RealTimeChat/RealTimeChat.csproj"
+
+[deploy]
+startCommand = "dotnet backend/RealTimeChat/out/RealTimeChat.dll" 
